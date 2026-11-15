@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitation ya Kimapenzi ❤️</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="bg-hearts" id="bgHearts"></div>
+
+  <!-- Welcome Screen -->
+  <section id="welcome-screen" class="screen active">
+    <div class="card">
+      <div class="heart-icon">💖</div>
+      <h1 class="title">Habari Mrembo</h1>
+      <p class="subtitle">Nimekuandalia maswali machache ya kimapenzi...</p>
+      <p class="intro-text">Jibu kwa uaminifu. Kila jibu lina maana kwangu. 🥰</p>
+      
+      <div class="name-input-group">
+        <label for="userName">Jina lako (si lazima)</label>
+        <input type="text" id="userName" placeholder="Andika jina lako hapa..." maxlength="40">
+      </div>
+
+      <button class="btn btn-primary" id="startBtn">Anza Maswali ❤️</button>
+    </div>
+  </section>
+
+  <!-- Question Screens (generated dynamically) -->
+  <section id="question-screen" class="screen">
+    <div class="card">
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <p class="question-counter" id="questionCounter">Swali 1 / 6</p>
+      <h2 class="question-text" id="questionText"></h2>
+      <div class="answer-buttons">
+        <button class="btn btn-yes" id="yesBtn">NDIYO ❤️</button>
+        <button class="btn btn-no" id="noBtn">HAPANA</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Soft No Screen (if any NO is selected) -->
+  <section id="soft-no-screen" class="screen">
+    <div class="card">
+      <div class="heart-icon">💔</div>
+      <h2 class="title">Sawa, nakuelewa...</h2>
+      <p class="subtitle">Hakuna shida. Asante kwa kujibu kwa uaminifu.</p>
+      <p class="intro-text">Labda siku nyingine tutaweza kuzungumza tena. 😊</p>
+      <button class="btn btn-primary" id="restartFromNoBtn">Anza Upya</button>
+    </div>
+  </section>
+
+  <!-- Confirmation Screen (NEW) -->
+  <section id="confirmation-screen" class="screen">
+    <div class="card">
+      <div class="heart-icon">❤️</div>
+      <h1 class="title">Hongera Mrembo! ❤️</h1>
+      <p class="subtitle">Umemaliza kujibu maswali yote!</p>
+      <p class="main-question">Je, upo tayari kutuma majibu yako kwa mhusika?</p>
+      <p class="supporting-text">Majibu yako yako tayari. Ukiwa tayari, unaweza kuyatuma kupitia WhatsApp. 🥰</p>
+      
+      <div class="confirm-buttons">
+        <button class="btn btn-whatsapp" id="yesWhatsAppBtn">NDIYO, TUMA WHATSAPP ❤️</button>
+        <button class="btn btn-secondary" id="noWhatsAppBtn">HAPANA, SIO SASA</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- After "HAPANA, SIO SASA" -->
+  <section id="later-screen" class="screen">
+    <div class="card">
+      <div class="heart-icon">💌</div>
+      <h2 class="title">Sawa, hakuna shida</h2>
+      <p class="subtitle">Majibu yako yamehifadhiwa.</p>
+      <p class="intro-text">Unaweza kurudi baadaye na kuyatuma kupitia WhatsApp unapokuwa tayari. 🥰</p>
+      <div class="confirm-buttons">
+        <button class="btn btn-primary" id="backToConfirmBtn">Rudi kwenye Uthibitisho</button>
+        <button class="btn btn-secondary" id="restartFromLaterBtn">Anza Upya</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- After WhatsApp opened instruction -->
+  <section id="whatsapp-opened-screen" class="screen">
+    <div class="card">
+      <div class="heart-icon">📱</div>
+      <h2 class="title">WhatsApp imefunguka</h2>
+      <p class="subtitle">Bonyeza <strong>Send</strong> ili kutuma majibu yako. ❤️</p>
+      <p class="intro-text">Ujumbe umeandaliwa tayari. Unahitaji tu kubonyeza Send ndani ya WhatsApp.</p>
+      <div class="confirm-buttons">
+        <button class="btn btn-whatsapp" id="openWhatsAppAgainBtn">Fungua WhatsApp Tena</button>
+        <button class="btn btn-secondary" id="backFromOpenedBtn">Rudi Nyuma</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final Celebration (only reachable if needed, currently not auto-shown) -->
+  <section id="celebration-screen" class="screen">
+    <div class="card celebration">
+      <div class="big-heart">💖</div>
+      <h1 class="title">Asante Mrembo!</h1>
+      <p class="subtitle">Nimefurahi sana kujua majibu yako.</p>
+      <p class="intro-text">Nakungoja kwa hamu... 🥰❤️</p>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
